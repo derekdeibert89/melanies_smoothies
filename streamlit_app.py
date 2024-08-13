@@ -43,3 +43,7 @@ if ingredients_list:
         session.sql(insert_statement).collect()
         success_string = """Your Smoothie is ordered, """+name_on_order+"""!"""
         st.success(success_string)
+
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_response)
